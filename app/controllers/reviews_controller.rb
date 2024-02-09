@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.restaurant = @restaurant
     if @review.valid? == false
-      render 'restaurants/show'
+      render 'restaurants/show', status: :unprocessable_entity
     else
       @review.save
       redirect_to restaurant_path(@restaurant)
