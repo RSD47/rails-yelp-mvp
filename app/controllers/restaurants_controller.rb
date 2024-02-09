@@ -5,10 +5,11 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @restaurant
+    @review = Review.new
   end
 
   def new
+    @categories = %w[chinese italian japanese french belgian]
     @restaurant = Restaurant.new
   end
 

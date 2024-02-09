@@ -1,9 +1,10 @@
-<h1>Restaurants</h1>
-<main>
+<main class="mt-2">
+  <h1>Restaurants</h1>
   <% @restaurants.each do |restaurant| %>
-    <div>
+    <div class="d-flex">
       <p><%= link_to(restaurant.name, restaurant_path(restaurant)) %></p>
+      <p class="ms-2"><%= restaurant.category%></p>
     </div>
   <% end %>
+  <%= link_to("Add restaurant", new_restaurant_path) %>
 </main>
-<%= link_to("Add restaurant", new_restaurant_path) %>
